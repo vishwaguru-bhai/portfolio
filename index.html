@@ -42,6 +42,7 @@ nav{position:sticky;top:16px;z-index:50;display:flex;align-items:center;justify-
 .btn-ghost{border-color:var(--border);color:var(--text);background:rgba(255,255,255,.03)}
 .btn-ghost:hover{border-color:var(--teal);box-shadow:0 0 20px rgba(34,211,238,.25)}
 .btn-sm{padding:9px 20px;font-size:13.5px;border-radius:10px}
+/* ---------- hero ---------- */
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:88px 0 40px}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.18em;
   color:var(--green);border:1px solid rgba(52,211,153,.35);background:rgba(52,211,153,.08);
@@ -52,9 +53,18 @@ h1{font-size:clamp(44px,6vw,76px);font-weight:900;line-height:1.02;letter-spacin
   background:linear-gradient(180deg,#fff,#a5b4cf);-webkit-background-clip:text;background-clip:text;color:transparent}
 .subtitle{font-size:clamp(19px,2.4vw,27px);font-weight:700;margin-top:14px;
   background:linear-gradient(90deg,var(--teal),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--muted);font-size:16.5px;line-height:1.7;margin-top:18px;max-width:54ch}
+.typed-line{margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:16px;color:#cbd5e1;min-height:28px}
+.typed-line .prompt{color:var(--green);font-weight:700}
+#typed{color:#fff;font-weight:600}
+.tcaret{display:inline-block;width:9px;height:18px;background:var(--teal);vertical-align:-3px;animation:blink 1s steps(1) infinite;box-shadow:0 0 10px var(--teal)}
+@keyframes blink{50%{opacity:0}}
+.lead{color:var(--muted);font-size:16.5px;line-height:1.7;margin-top:14px;max-width:54ch}
 .lead b{color:#e2e8f0}
 .cta-row{display:flex;gap:16px;margin-top:30px;flex-wrap:wrap}
+.social-row{display:flex;gap:12px;margin-top:26px}
+.soc{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--border);
+  background:rgba(255,255,255,.03);color:#cbd5e1;text-decoration:none;font-size:19px;transition:.25s}
+.soc:hover{transform:translateY(-3px);border-color:var(--teal);color:#fff;box-shadow:0 8px 24px rgba(34,211,238,.25)}
 .codewin{background:rgba(8,12,24,.78);border:1px solid var(--border);border-radius:16px;overflow:hidden;
   box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 44px rgba(168,85,247,.12);backdrop-filter:blur(10px);
   transform:perspective(1200px) rotateY(-4deg) rotateX(2deg);transition:transform .5s}
@@ -67,7 +77,7 @@ h1{font-size:clamp(44px,6vw,76px);font-weight:900;line-height:1.02;letter-spacin
 #code{padding:20px 22px;font-family:'JetBrains Mono',monospace;font-size:13.8px;line-height:1.75;min-height:340px;white-space:pre-wrap}
 #code .kw{color:#c084fc}#code .str{color:#86efac}#code .fn{color:#67e8f9}#code .cm{color:#64748b;font-style:italic}#code .tp{color:#fbbf24}
 .caret{display:inline-block;width:9px;height:18px;background:var(--teal);vertical-align:-3px;animation:blink 1s steps(1) infinite;box-shadow:0 0 10px var(--teal)}
-@keyframes blink{50%{opacity:0}}
+/* ---------- stats ---------- */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:56px 0}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px 24px;position:relative;overflow:hidden;
   backdrop-filter:blur(12px);transition:.3s}
@@ -77,6 +87,7 @@ h1{font-size:clamp(44px,6vw,76px);font-weight:900;line-height:1.02;letter-spacin
 .stat .lbl{font-weight:700;margin-top:6px;font-size:15px}
 .stat .sub{color:var(--muted);font-size:13px;margin-top:4px;line-height:1.5}
 .stat .ico{font-size:24px;margin-bottom:10px;display:block}
+/* ---------- marquee ---------- */
 .marquee{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
   background:rgba(255,255,255,.02);margin:20px 0 70px;position:relative;z-index:1}
 .mtrack{display:flex;gap:14px;padding:16px 0;width:max-content;animation:scroll 30s linear infinite}
@@ -86,13 +97,14 @@ h1{font-size:clamp(44px,6vw,76px);font-weight:900;line-height:1.02;letter-spacin
 .mtrack span:nth-child(3n){color:var(--teal);border-color:rgba(34,211,238,.35)}
 .mtrack span:nth-child(3n+1){color:#c084fc;border-color:rgba(168,85,247,.35)}
 @keyframes scroll{to{transform:translateX(-50%)}}
+/* ---------- sections ---------- */
 section{padding:36px 0}
 .sec-title{font-size:13px;font-weight:800;letter-spacing:.22em;color:var(--green);margin-bottom:14px}
 .sec-head{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
 .sec-sub{color:var(--muted);font-size:15.5px;margin-bottom:28px;max-width:70ch;line-height:1.65}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;backdrop-filter:blur(12px);transition:.3s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 34px rgba(168,85,247,.14);border-color:rgba(168,85,247,.4)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;backdrop-filter:blur(12px);transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden;transform-style:preserve-3d}
+.card:hover{box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 34px rgba(168,85,247,.14);border-color:rgba(168,85,247,.4)}
 .card h3{font-size:20px;margin-bottom:10px}
 .card p{color:var(--muted);line-height:1.7;font-size:14.5px}
 .card ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:9px}
@@ -102,7 +114,7 @@ section{padding:36px 0}
 .tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
 .tags span{font-size:12px;font-weight:600;border:1px solid var(--border);border-radius:999px;padding:6px 13px;color:#cbd5e1;background:rgba(255,255,255,.03)}
 .card .ext{margin-top:14px;display:inline-block;color:var(--teal);font-size:13.5px;font-weight:600;text-decoration:none}
-/* timeline */
+/* ---------- timeline ---------- */
 .tl{position:relative;margin-top:6px;padding-left:30px}
 .tl::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--teal),var(--purple),transparent)}
 .tl-item{position:relative;padding:0 0 34px 18px}
@@ -115,21 +127,68 @@ section{padding:36px 0}
 .tl-item li{color:#cbd5e1;font-size:14px;padding-left:22px;position:relative;line-height:1.6}
 .tl-item li::before{content:'▸';position:absolute;left:0;color:var(--purple)}
 .tl-item li b{color:#f1f5f9}
-/* skills */
+/* ---------- skills ---------- */
 .skillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.skillbox{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;backdrop-filter:blur(10px)}
+.skillbox{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;backdrop-filter:blur(10px);position:relative;overflow:hidden;transition:.3s}
+.skillbox::after{content:'';position:absolute;inset:auto 0 0 0;height:2px;background:linear-gradient(90deg,var(--teal),var(--purple));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.skillbox:hover::after{transform:scaleX(1)}
+.skillbox:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.35);box-shadow:0 14px 36px rgba(0,0,0,.4)}
 .skillbox h4{font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--teal);margin-bottom:12px}
 .skillbox p{color:#cbd5e1;font-size:13.5px;line-height:1.9}
-/* awards */
+/* ---------- awards ---------- */
 .awards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .award{background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(34,211,238,.06));border:1px solid rgba(168,85,247,.35);
-  border-radius:20px;padding:30px;position:relative;overflow:hidden}
+  border-radius:20px;padding:30px;position:relative;overflow:hidden;transition:.3s}
+.award:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,0,0,.45),0 0 30px rgba(251,191,36,.12)}
 .award .rank{font-size:15px;font-weight:800;color:#fbbf24;letter-spacing:.06em}
 .award h3{font-size:19px;margin:8px 0}
 .award p{color:var(--muted);font-size:14px;line-height:1.65}
-/* contact */
+/* ---------- profile at a glance (GitHub ID card) ---------- */
+.idcard{background:linear-gradient(150deg,rgba(13,20,38,.95),rgba(8,12,24,.9));border:1px solid rgba(34,211,238,.28);
+  border-radius:22px;padding:34px;position:relative;overflow:hidden;backdrop-filter:blur(14px);
+  box-shadow:0 24px 70px rgba(0,0,0,.5),0 0 50px rgba(34,211,238,.08)}
+.idcard::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;
+  background:linear-gradient(90deg,var(--teal),var(--green),var(--purple),var(--pink),var(--teal));background-size:200% 100%;animation:slide 6s linear infinite}
+@keyframes slide{to{background-position:200% 0}}
+.idcard-top{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.idcard-top img{width:88px;height:88px;border-radius:22px;border:2px solid rgba(34,211,238,.5);box-shadow:0 0 30px rgba(34,211,238,.3)}
+.idcard-top h3{font-size:24px;font-weight:800}
+.idcard-top .handle{font-family:'JetBrains Mono',monospace;color:var(--teal);font-size:14px;margin-top:2px}
+.idcard-top .bio{color:var(--muted);font-size:14px;margin-top:6px}
+.idcard-top .ghbtn{margin-left:auto}
+.idstats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.idstat{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;transition:.25s}
+.idstat:hover{border-color:rgba(52,211,153,.5);transform:translateY(-3px)}
+.idstat .n{font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--green),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+.idstat .l{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:.06em;font-weight:600}
+.toprepos{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.toprepo{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);border-radius:12px;
+  background:rgba(255,255,255,.02);text-decoration:none;color:#e2e8f0;transition:.25s}
+.toprepo:hover{border-color:rgba(34,211,238,.5);transform:translateX(6px);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.toprepo .nm{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:var(--teal)}
+.toprepo .ds{font-size:12.5px;color:var(--muted);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toprepo .st{font-size:13px;color:#fbbf24;font-weight:700;white-space:nowrap}
+/* ---------- contribution graph ---------- */
+.gh-card{margin-top:22px;background:rgba(8,12,24,.8);border:1px solid var(--border);border-radius:20px;padding:28px;overflow:hidden}
+.gh-card h4{font-size:16px;font-weight:700;margin-bottom:4px}
+.gh-card .gh-sub{color:var(--muted);font-size:13px;margin-bottom:18px;font-family:'JetBrains Mono',monospace}
+.gh-scroll{overflow-x:auto;padding-bottom:6px}
+.gh-months{display:grid;grid-template-columns:repeat(53,11px);gap:3px;margin:0 0 6px 31px;font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace;min-width:757px}
+.gh-month{white-space:nowrap;overflow:visible}
+.gh-cal{display:grid;grid-template-columns:28px repeat(53,11px);grid-template-rows:repeat(7,11px);gap:3px;min-width:785px}
+.gh-day{font-size:9px;color:var(--muted);align-self:center;grid-column:1;font-family:'JetBrains Mono',monospace}
+.gh-cell{width:11px;height:11px;border-radius:2.5px;opacity:0;transform:scale(.3);transition:transform .15s}
+.gh-cell:hover{transform:scale(1.35);outline:1px solid rgba(255,255,255,.5);z-index:2;position:relative}
+.gh-pad{visibility:hidden}
+.gh-graph.visible .gh-cell:not(.gh-pad){animation:pop .45s cubic-bezier(.34,1.56,.64,1) forwards;animation-delay:calc(var(--d)*3.5ms)}
+@keyframes pop{to{opacity:1;transform:scale(1)}}
+.gh-legend{display:flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;color:var(--muted)}
+.gh-legend .gh-cell{opacity:1;transform:none;width:11px;height:11px}
+.gh-note{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:12px}
+/* ---------- contact ---------- */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
-.contact-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:34px;backdrop-filter:blur(12px)}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:34px;backdrop-filter:blur(12px);transition:.3s}
+.contact-card:hover{border-color:rgba(34,211,238,.35);box-shadow:0 16px 44px rgba(0,0,0,.4)}
 .contact-card h3{font-size:20px;margin-bottom:14px}
 .contact-row{display:flex;align-items:center;gap:12px;margin:12px 0;font-size:15px;color:#cbd5e1}
 .contact-row a{color:#fff;text-decoration:none;font-weight:600}
@@ -139,6 +198,7 @@ footer a{color:#cbd5e1;text-decoration:none;margin-left:22px;font-weight:600}
 footer a:hover{color:var(--teal)}
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:none}
+/* ---------- volt the pet ---------- */
 #pet-zone{position:fixed;right:26px;bottom:26px;z-index:100;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
 #bubble{max-width:270px;background:rgba(12,18,34,.92);border:1px solid rgba(168,85,247,.45);border-radius:16px 16px 4px 16px;
   padding:14px 16px;font-size:14px;line-height:1.55;color:#e2e8f0;backdrop-filter:blur(12px);
@@ -164,10 +224,13 @@ footer a:hover{color:var(--teal)}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;padding-top:56px}
   .stats{grid-template-columns:1fr 1fr}
+  .idstats{grid-template-columns:1fr 1fr}
   .cards,.awards,.contact-grid{grid-template-columns:1fr}
   .skillgrid{grid-template-columns:1fr 1fr}
   .nav-links a:not(.btn){display:none}
   #pet{width:92px;height:92px}
+  #bubble{max-width:220px;font-size:13px}
+  .idcard-top .ghbtn{margin-left:0}
 }
 </style>
 </head>
@@ -179,7 +242,7 @@ footer a:hover{color:var(--teal)}
 <nav>
   <div class="logo"><div class="logo-mark">M</div>MOHD&nbsp;MUJTABA</div>
   <div class="nav-links">
-    <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#ai">AI</a><a href="#contact" class="btn btn-primary btn-sm">Contact</a>
+    <a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#github">GitHub</a><a href="#contact" class="btn btn-primary btn-sm">Let's Talk</a>
   </div>
 </nav>
 
@@ -188,10 +251,17 @@ footer a:hover{color:var(--teal)}
     <div class="eyebrow"><span class="dot"></span>SDE-3 @ WEALTHY · BANGALORE</div>
     <h1>Mohd Mujtaba</h1>
     <div class="subtitle">Senior Backend Engineer — Fintech, Distributed Systems &amp; AI</div>
+    <div class="typed-line"><span class="prompt">▸</span> I build <span id="typed"></span><span class="tcaret"></span></div>
     <p class="lead">6+ years building high-throughput fintech in <b>Python &amp; Go</b>, with production <b>React</b> delivery. Scaled a mutual-fund platform <b>70x in AUM (₹50 Cr → ₹3,500 Cr)</b>, architected payments doing <b>500k+ transactions/month</b>, and run financial pipelines on <b>10M+ records/day</b>. Now building agentic AI with Google ADK, MCP &amp; GenAI Toolbox.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#projects">View Projects →</a>
       <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+    </div>
+    <div class="social-row">
+      <a class="soc" href="https://github.com/iammujtaba" target="_blank" rel="noopener" title="GitHub">⌨</a>
+      <a class="soc" href="https://linkedin.com/in/mohdmujtaba" target="_blank" rel="noopener" title="LinkedIn">💼</a>
+      <a class="soc" href="https://mohdmujtaba.me" target="_blank" rel="noopener" title="Website">🌐</a>
+      <a class="soc" href="mailto:mujtaba.aamir1@gmail.com" title="Email">✉️</a>
     </div>
   </div>
   <div class="codewin">
@@ -205,16 +275,86 @@ footer a:hover{color:var(--teal)}
 </header>
 
 <div class="stats reveal">
-  <div class="stat"><span class="ico">💳</span><div class="num">500k+</div><div class="lbl">Transactions / month</div><div class="sub">Payment orchestration · UPI, net-banking, e-mandates</div></div>
-  <div class="stat"><span class="ico">📈</span><div class="num">70x</div><div class="lbl">AUM Growth</div><div class="sub">₹50 Cr → ₹3,500 Cr · mutual fund platform</div></div>
-  <div class="stat"><span class="ico">⚡</span><div class="num">10M+</div><div class="lbl">Records / day</div><div class="sub">Revenue engine · 1M+ financial txns/day</div></div>
-  <div class="stat"><span class="ico">⚙️</span><div class="num">6+ yrs</div><div class="lbl">Engineering</div><div class="sub">Python · Go · React · Distributed systems</div></div>
+  <div class="stat"><span class="ico">💳</span><div class="num" data-count="500" data-suffix="k+">0</div><div class="lbl">Transactions / month</div><div class="sub">Payment orchestration · UPI, net-banking, e-mandates</div></div>
+  <div class="stat"><span class="ico">📈</span><div class="num" data-count="70" data-suffix="x">0</div><div class="lbl">AUM Growth</div><div class="sub">₹50 Cr → ₹3,500 Cr · mutual fund platform</div></div>
+  <div class="stat"><span class="ico">⚡</span><div class="num" data-count="10" data-suffix="M+">0</div><div class="lbl">Records / day</div><div class="sub">Revenue engine · 1M+ financial txns/day</div></div>
+  <div class="stat"><span class="ico">⚙️</span><div class="num" data-count="6" data-suffix="+ yrs">0</div><div class="lbl">Engineering</div><div class="sub">Python · Go · React · Distributed systems</div></div>
 </div>
 </div>
 
 <div class="marquee"><div class="mtrack" id="mtrack"></div></div>
 
 <div class="wrap">
+
+<section id="projects" class="reveal">
+  <div class="sec-title">● PROJECTS</div>
+  <div class="sec-head">Things I've built &amp; shipped.</div>
+  <p class="sec-sub">Production platforms at Wealthy plus selected open-source and personal builds.</p>
+  <div class="cards">
+    <div class="card tilt">
+      <h3>💳 Payment Platform</h3>
+      <p>Multi-tenant payments service in Go/Gin — <b>500k+ transactions/month</b>.</p>
+      <ul>
+        <li>Razorpay, Cashfree, HDFC, Pine Labs, CAMSPay integrations</li>
+        <li>UPI Collect/Intent, net-banking, e-mandates, signed callbacks &amp; status reconciliation</li>
+      </ul>
+      <div class="tags"><span>Go</span><span>Gin</span><span>PostgreSQL</span><span>Redis</span></div>
+    </div>
+    <div class="card tilt">
+      <h3>📊 Revenue Calculation Engine</h3>
+      <p>Distributed system computing revenue from portfolio valuations.</p>
+      <ul>
+        <li><b>1M+ financial transactions/day</b>, <b>10M+ records/day</b></li>
+        <li>Async processing, queues, DLQs, state machines</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>ClickHouse</span><span>SQS</span></div>
+    </div>
+    <div class="card tilt">
+      <h3>🤖 MeetIQ — AI Meeting Intelligence</h3>
+      <p>Real-time transcription, summarization &amp; action-item extraction. Started as a <b>1st-rank hackathon build</b>, productionized into an internal platform.</p>
+      <ul>
+        <li>Go/Gin backend, WebSockets, MySQL/GORM, S3 presigned uploads</li>
+        <li>SQS workers with retries/DLQ, Redis, LLM-powered insights</li>
+      </ul>
+      <div class="tags"><span>Go</span><span>Gin</span><span>WebSockets</span><span>LLMs</span></div>
+    </div>
+    <div class="card tilt">
+      <h3>🧠 AI Support Agent</h3>
+      <p>Agent automating ticket analysis, query resolution &amp; internal task execution.</p>
+      <ul>
+        <li>Built on <b>Google ADK</b> with MCP servers &amp; GenAI Toolbox</li>
+        <li>Agentic workflows over internal tools and databases</li>
+      </ul>
+      <div class="tags"><span>Google ADK</span><span>MCP</span><span>GenAI Toolbox</span></div>
+    </div>
+    <div class="card tilt">
+      <h3>🔁 RTA &amp; Feed Platform</h3>
+      <p>CAMS / KFintech (Karvy) feed &amp; reverse-feed workflows for the mutual-fund platform.</p>
+      <ul>
+        <li>Feed generation/regeneration, distributed locking, broker-change &amp; ARN transfers, NRI cases, settlements</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>Django</span><span>Airflow</span><span>Celery</span></div>
+    </div>
+    <div class="card tilt">
+      <h3>📈 AstraFolio × MF Central</h3>
+      <p>Mutual-fund portfolio analytics platform with MF Central auth, SIP/STP/SWP insights, reports &amp; charts.</p>
+      <a class="ext" href="https://github.com/iammujtaba/astrafolio" target="_blank" rel="noopener">github.com/iammujtaba/astrafolio ↗</a>
+      <div class="tags"><span>React</span><span>Python</span><span>MF Central</span></div>
+    </div>
+    <div class="card tilt">
+      <h3>⚡ chargepoint</h3>
+      <p>FastAPI microservice ingesting EV charging-station health reports, computing network hygiene scores.</p>
+      <a class="ext" href="https://github.com/iammujtaba/chargepoint" target="_blank" rel="noopener">github.com/iammujtaba/chargepoint ↗</a>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>Microservice</span></div>
+    </div>
+    <div class="card tilt">
+      <h3>🎙️ alienx</h3>
+      <p>Voice-controlled PC automation assistant — speak, and it gets things done.</p>
+      <a class="ext" href="https://github.com/iammujtaba/alienx" target="_blank" rel="noopener">github.com/iammujtaba/alienx ↗</a>
+      <div class="tags"><span>Python</span><span>Whisper</span><span>Automation</span></div>
+    </div>
+  </div>
+</section>
 
 <section id="experience" class="reveal">
   <div class="sec-title">● EXPERIENCE</div>
@@ -259,72 +399,67 @@ footer a:hover{color:var(--teal)}
   </div>
 </section>
 
-<section id="projects" class="reveal">
-  <div class="sec-title">● PROJECTS</div>
-  <div class="sec-head">Things I've built &amp; shipped.</div>
-  <p class="sec-sub">Production platforms at Wealthy plus selected open-source and personal builds.</p>
-  <div class="cards">
-    <div class="card">
-      <h3>💳 Payment Platform</h3>
-      <p>Multi-tenant payments service in Go/Gin — <b>500k+ transactions/month</b>.</p>
-      <ul>
-        <li>Razorpay, Cashfree, HDFC, Pine Labs, CAMSPay integrations</li>
-        <li>UPI Collect/Intent, net-banking, e-mandates, signed callbacks &amp; status reconciliation</li>
-      </ul>
-      <div class="tags"><span>Go</span><span>Gin</span><span>PostgreSQL</span><span>Redis</span></div>
+<section id="tools" class="reveal">
+  <div class="sec-title">● TOOLS I WORK WITH</div>
+  <div class="sec-head">The toolbox.</div>
+  <p class="sec-sub">Battle-tested across payments, RTA feeds, distributed systems and agentic AI.</p>
+  <div class="skillgrid">
+    <div class="skillbox"><h4>LANGUAGES</h4><p>Python · Go · SQL · JavaScript · TypeScript</p></div>
+    <div class="skillbox"><h4>FRONTEND</h4><p>React · Reusable components · API integration · Production rollouts</p></div>
+    <div class="skillbox"><h4>BACKEND &amp; APIS</h4><p>Django · FastAPI · Gin · Flask · REST · GraphQL · gRPC</p></div>
+    <div class="skillbox"><h4>DATA</h4><p>PostgreSQL · MySQL · ClickHouse · Redis · SQLAlchemy · GORM</p></div>
+    <div class="skillbox"><h4>DISTRIBUTED &amp; CLOUD</h4><p>AWS (S3, SQS) · Docker · Kubernetes · Airflow · Celery</p></div>
+    <div class="skillbox"><h4>RELIABILITY</h4><p>Async processing · Queues · DLQs · State machines · Structured logging</p></div>
+    <div class="skillbox"><h4>FINTECH</h4><p>Payments · RTA feeds (CAMS, KFintech) · BSE STAR · SIP/STP/SWP · Reconciliation</p></div>
+    <div class="skillbox"><h4>AI / LLM</h4><p>Google ADK · Agentic AI · MCP · GenAI Toolbox · Whisper</p></div>
+    <div class="skillbox"><h4>EDUCATION</h4><p>B.Tech, Computer Science — Lovely Professional University (2016–2020) · GPA 8.95</p></div>
+  </div>
+</section>
+
+<section id="github" class="reveal">
+  <div class="sec-title">● PROFILE AT A GLANCE</div>
+  <div class="sec-head">The GitHub tells the story.</div>
+  <p class="sec-sub">Live public stats — no vanity metrics, just the commit history.</p>
+  <div class="idcard">
+    <div class="idcard-top">
+      <img src="https://avatars.githubusercontent.com/u/26418439?v=4" alt="Mohd Mujtaba GitHub avatar" loading="lazy">
+      <div>
+        <h3>Mohd Mujtaba</h3>
+        <div class="handle">@iammujtaba</div>
+        <div class="bio">SDE-3 @ Wealthy · Bangalore, India · building fintech &amp; agentic AI</div>
+      </div>
+      <a class="btn btn-ghost btn-sm ghbtn" href="https://github.com/iammujtaba" target="_blank" rel="noopener">View Profile ↗</a>
     </div>
-    <div class="card">
-      <h3>📊 Revenue Calculation Engine</h3>
-      <p>Distributed system computing revenue from portfolio valuations.</p>
-      <ul>
-        <li><b>1M+ financial transactions/day</b>, <b>10M+ records/day</b></li>
-        <li>Async processing, queues, DLQs, state machines</li>
-      </ul>
-      <div class="tags"><span>Python</span><span>FastAPI</span><span>ClickHouse</span><span>SQS</span></div>
+    <div class="idstats">
+      <div class="idstat"><div class="n">51</div><div class="l">REPOSITORIES</div></div>
+      <div class="idstat"><div class="n">22</div><div class="l">TOTAL STARS</div></div>
+      <div class="idstat"><div class="n">10</div><div class="l">FOLLOWERS</div></div>
+      <div class="idstat"><div class="n">2,108</div><div class="l">CONTRIBUTIONS / YR</div></div>
     </div>
-    <div class="card" id="ai">
-      <h3>🤖 MeetIQ — AI Meeting Intelligence</h3>
-      <p>Real-time transcription, summarization &amp; action-item extraction. Started as a <b>1st-rank hackathon build</b>, productionized into an internal platform.</p>
-      <ul>
-        <li>Go/Gin backend, WebSockets, MySQL/GORM, S3 presigned uploads</li>
-        <li>SQS workers with retries/DLQ, Redis, LLM-powered insights</li>
-      </ul>
-      <div class="tags"><span>Go</span><span>Gin</span><span>WebSockets</span><span>LLMs</span></div>
+    <div class="toprepos">
+      <a class="toprepo" href="https://github.com/iammujtaba/django_related_stuffs" target="_blank" rel="noopener"><span class="nm">⌨ django_related_stuffs</span><span class="ds">Django deep-dives &amp; patterns</span><span class="st">★ 6</span></a>
+      <a class="toprepo" href="https://github.com/iammujtaba/supremecycle" target="_blank" rel="noopener"><span class="nm">🚲 supremecycle</span><span class="ds">Supreme Cycle shop website</span><span class="st">★ 3</span></a>
+      <a class="toprepo" href="https://github.com/iammujtaba/awesome_python_stuffs" target="_blank" rel="noopener"><span class="nm">🐍 awesome_python_stuffs</span><span class="ds">Curated Python libraries &amp; cool stuff</span><span class="st">★ 3</span></a>
+      <a class="toprepo" href="https://github.com/iammujtaba/fastapi_related_stuffs" target="_blank" rel="noopener"><span class="nm">⚡ fastapi_related_stuffs</span><span class="ds">FastAPI interesting concepts</span><span class="st">★ 3</span></a>
     </div>
-    <div class="card">
-      <h3>🧠 AI Support Agent</h3>
-      <p>Agent automating ticket analysis, query resolution &amp; internal task execution.</p>
-      <ul>
-        <li>Built on <b>Google ADK</b> with MCP servers &amp; GenAI Toolbox</li>
-        <li>Agentic workflows over internal tools and databases</li>
-      </ul>
-      <div class="tags"><span>Google ADK</span><span>MCP</span><span>GenAI Toolbox</span></div>
-    </div>
-    <div class="card">
-      <h3>🔁 RTA &amp; Feed Platform</h3>
-      <p>CAMS / KFintech (Karvy) feed &amp; reverse-feed workflows for the mutual-fund platform.</p>
-      <ul>
-        <li>Feed generation/regeneration, distributed locking, broker-change &amp; ARN transfers, NRI cases, settlements</li>
-      </ul>
-      <div class="tags"><span>Python</span><span>Django</span><span>Airflow</span><span>Celery</span></div>
-    </div>
-    <div class="card">
-      <h3>📈 AstraFolio × MF Central</h3>
-      <p>Mutual-fund portfolio analytics platform with MF Central auth, SIP/STP/SWP insights, reports &amp; charts.</p>
-      <a class="ext" href="https://github.com/iammujtaba/astrafolio" target="_blank" rel="noopener">github.com/iammujtaba/astrafolio ↗</a>
-      <div class="tags"><span>React</span><span>Python</span><span>MF Central</span></div>
-    </div>
-    <div class="card">
-      <h3>⚡ chargepoint</h3>
-      <p>FastAPI microservice ingesting EV charging-station health reports, computing network hygiene scores.</p>
-      <a class="ext" href="https://github.com/iammujtaba/chargepoint" target="_blank" rel="noopener">github.com/iammujtaba/chargepoint ↗</a>
-      <div class="tags"><span>Python</span><span>FastAPI</span><span>Microservice</span></div>
-    </div>
-    <div class="card">
-      <h3>🎙️ alienx</h3>
-      <p>Voice-controlled PC automation assistant — speak, and it gets things done.</p>
-      <a class="ext" href="https://github.com/iammujtaba/alienx" target="_blank" rel="noopener">github.com/iammujtaba/alienx ↗</a>
-      <div class="tags"><span>Python</span><span>Whisper</span><span>Automation</span></div>
+  </div>
+  <div class="gh-card">
+    <h4>Contribution activity</h4>
+    <div class="gh-sub">github.com/iammujtaba · last 12 months</div>
+    <div class="gh-graph" id="gh-graph">
+      <div class="gh-scroll">
+        <div class="gh-months" id="gh-months"></div>
+        <div class="gh-cal" id="gh-cal"></div>
+      </div>
+      <div class="gh-legend"><span>Less</span>
+        <span class="gh-cell" style="background:rgba(255,255,255,.07)"></span>
+        <span class="gh-cell" style="background:#0e4429"></span>
+        <span class="gh-cell" style="background:#006d32"></span>
+        <span class="gh-cell" style="background:#26a641"></span>
+        <span class="gh-cell" style="background:#39d353"></span>
+        <span>More</span>
+        <span class="gh-note">2,108 contributions · Oct 2025 – Oct 2026</span>
+      </div>
     </div>
   </div>
 </section>
@@ -333,7 +468,7 @@ footer a:hover{color:var(--teal)}
   <div class="sec-title">● OPEN SOURCE</div>
   <div class="sec-head">Giving back upstream.</div>
   <div class="cards">
-    <div class="card">
+    <div class="card tilt">
       <h3>Google GenAI Toolbox for Databases</h3>
       <p>Merged upstream contributions — multi-file/folder configuration support and MySQL fixes.</p>
       <ul>
@@ -342,9 +477,9 @@ footer a:hover{color:var(--teal)}
       <a class="ext" href="https://github.com/iammujtaba/genai-toolbox" target="_blank" rel="noopener">My fork ↗</a>
       <div class="tags"><span>Go</span><span>GenAI Toolbox</span><span>MCP</span></div>
     </div>
-    <div class="card">
+    <div class="card tilt">
       <h3>GitHub — iammujtaba</h3>
-      <p>50+ repositories: FastAPI &amp; Django deep-dives, Go experiments, automation tools, learning resources.</p>
+      <p>51 public repositories: FastAPI &amp; Django deep-dives, Go experiments, automation tools, learning resources.</p>
       <ul>
         <li>django_related_stuffs ★6 · fastapi_related_stuffs ★3 · awesome_python_stuffs ★3</li>
       </ul>
@@ -371,25 +506,10 @@ footer a:hover{color:var(--teal)}
   </div>
 </section>
 
-<section id="skills" class="reveal">
-  <div class="sec-title">● SKILLS</div>
-  <div class="sec-head">The toolbox.</div>
-  <div class="skillgrid">
-    <div class="skillbox"><h4>LANGUAGES</h4><p>Python · Go · SQL · JavaScript · TypeScript</p></div>
-    <div class="skillbox"><h4>FRONTEND</h4><p>React · Reusable components · API integration · Production rollouts</p></div>
-    <div class="skillbox"><h4>BACKEND &amp; APIS</h4><p>Django · FastAPI · Gin · Flask · REST · GraphQL · gRPC</p></div>
-    <div class="skillbox"><h4>DATA</h4><p>PostgreSQL · MySQL · ClickHouse · Redis · SQLAlchemy · GORM</p></div>
-    <div class="skillbox"><h4>DISTRIBUTED &amp; CLOUD</h4><p>AWS (S3, SQS) · Docker · Kubernetes · Airflow · Celery</p></div>
-    <div class="skillbox"><h4>RELIABILITY</h4><p>Async processing · Queues · DLQs · State machines · Structured logging</p></div>
-    <div class="skillbox"><h4>FINTECH</h4><p>Payments · RTA feeds (CAMS, KFintech) · BSE STAR · SIP/STP/SWP · Reconciliation</p></div>
-    <div class="skillbox"><h4>AI / LLM</h4><p>Google ADK · Agentic AI · MCP · GenAI Toolbox · Whisper</p></div>
-    <div class="skillbox"><h4>EDUCATION</h4><p>B.Tech, Computer Science — Lovely Professional University (2016–2020) · GPA 8.95</p></div>
-  </div>
-</section>
-
 <section id="contact" class="reveal">
   <div class="sec-title">● CONTACT</div>
-  <div class="sec-head">Let's build something.</div>
+  <div class="sec-head">Let's build something together.</div>
+  <p class="sec-sub">Open to interesting conversations — distributed systems, fintech infrastructure, agentic AI.</p>
   <div class="contact-grid">
     <div class="contact-card">
       <h3>📬 Reach me</h3>
@@ -469,6 +589,18 @@ const stack=['PYTHON','GO','REACT','TYPESCRIPT','DJANGO','FASTAPI','GOOGLE ADK',
 const mt=document.getElementById('mtrack');
 mt.innerHTML=[...stack,...stack].map(s=>`<span>${s}</span>`).join('<span style="border:none;background:none;color:#475569">•</span>');
 
+/* ---------- hero typed roles ---------- */
+const roles=['payment systems that never sleep.','agentic AI with Google ADK.','distributed systems at scale.','fintech moving crores daily.'];
+const typedEl=document.getElementById('typed');
+let ri=0,rci=0,rdel=false;
+(function rtype(){
+  const word=roles[ri];
+  if(!rdel){rci++;if(rci>=word.length){rci=word.length;rdel=true;setTimeout(rtype,1600);typedEl.textContent=word;return}}
+  else{rci--;if(rci<=0){rci=0;rdel=false;ri=(ri+1)%roles.length}}
+  typedEl.textContent=word.slice(0,rci);
+  setTimeout(rtype,rdel?28:55+Math.random()*45);
+})();
+
 /* ---------- typing code window ---------- */
 const lines=[
  ['package main','kw'],
@@ -513,9 +645,53 @@ function type(){
 }
 setTimeout(type,700);
 
+/* ---------- animated stat counters ---------- */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,target=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now(),dur=1400;
+  (function tick(t){const p=Math.min(1,(t-t0)/dur),ease=1-Math.pow(1-p,3);
+    el.textContent=Math.round(target*ease)+suf;if(p<1)requestAnimationFrame(tick)})(t0);
+}),{threshold:.5});
+document.querySelectorAll('.stat .num[data-count]').forEach(el=>cio.observe(el));
+
 /* ---------- scroll reveal ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- contribution graph (real iammujtaba data, Oct 2025 – Oct 2026) ---------- */
+const GH_WEEKS=["0104210","0211000","0101310","0210212","0110301","0132100","0113310","0141210","0401100","0201100","0211022","0110000","0000000","0000000","0111110","0022210","0120222","1121000","0121220","0122211","0422110","0210112","3211300","0112020","0121121","1211100","1112120","1234330","0330210","0111200","0000000","0000000","0212110","0112000","0021100","1221220","0021000","1111120","0111410","0222110","0012211","2220320","1102000","1122110","0423220","0432200","1313110","0011111","0212112","0012020","0221120","0312100","0321210"];
+const GH_MONTHS=[[0,"Oct"],[4,"Nov"],[9,"Dec"],[13,"Jan"],[17,"Feb"],[21,"Mar"],[26,"Apr"],[30,"May"],[35,"Jun"],[39,"Jul"],[43,"Aug"],[48,"Sep"],[52,"Oct"]];
+const GH_START="2025-10-05";
+const GH_COLORS=['rgba(255,255,255,.07)','#0e4429','#006d32','#26a641','#39d353'];
+(function renderGraph(){
+  const cal=document.getElementById('gh-cal'),mon=document.getElementById('gh-months');
+  if(!cal||!mon)return;
+  mon.innerHTML=GH_MONTHS.map(([wi,m])=>`<span class="gh-month" style="grid-column:${wi+1}">${m}</span>`).join('');
+  let html='';
+  [[1,'Mon'],[3,'Wed'],[5,'Fri']].forEach(([r,l])=>{html+=`<span class="gh-day" style="grid-column:1;grid-row:${r+1}">${l}</span>`});
+  const start=new Date(GH_START+'T00:00:00');let n=0;
+  GH_WEEKS.forEach((w,wi)=>{
+    [...w].forEach((ch,di)=>{
+      const col=wi+2,row=di+1;
+      if(ch==='x'){html+=`<span class="gh-cell gh-pad" style="grid-column:${col};grid-row:${row}"></span>`;return}
+      const d=new Date(start.getTime()+(wi*7+di)*864e5);
+      const label=d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+      n++;html+=`<span class="gh-cell" style="grid-column:${col};grid-row:${row};background:${GH_COLORS[+ch]};--d:${n}" title="${label}"></span>`;
+    });
+  });
+  cal.innerHTML=html;
+  const g=document.getElementById('gh-graph');
+  new IntersectionObserver((es,obs)=>es.forEach(e=>{if(e.isIntersecting){g.classList.add('visible');obs.disconnect()}}),{threshold:.25}).observe(g);
+})();
+
+/* ---------- 3d tilt on cards ---------- */
+document.querySelectorAll('.tilt').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg) translateY(-5px)`;
+  });
+  card.addEventListener('mouseleave',()=>{card.style.transform=''});
+});
 
 /* ---------- VOLT the pet ---------- */
 const pet=document.getElementById('pet'),bubble=document.getElementById('bubble'),
